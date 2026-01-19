@@ -11,4 +11,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+    rollupOptions: {
+      input: {
+        popup: "index.html", // if you have popup
+      },
+      output: {
+        entryFileNames: "[name].js",
+      },
+    },
+  },
+  // Copy manifest from public to dist root
+  publicDir: "public",
 });
