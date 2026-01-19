@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Yoinker – Job Hunt Second Brain",
+  "version": "0.1.0",
+  "description": "Yoink jobs from job boards and remember everything with AI.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "*://*.ethiojobs.net/*",
+    "*://*.geezjobs.com/*",
+    "*://*.indeed.com/*",
+    "*://weworkremotely.com/*",
+    "http://localhost:3000/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/jobs/*",
+        "*://*.ethiojobs.net/*",
+        "*://*.geezjobs.com/*",
+        "*://*.indeed.com/viewjob*",
+        "*://weworkremotely.com/remote-jobs/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
