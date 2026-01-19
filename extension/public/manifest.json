@@ -13,7 +13,7 @@
     "http://localhost:3000/*"
   ],
   "background": {
-    "service_worker": "background.ts",
+    "service_worker": "background.js",
     "type": "module"
   },
   "content_scripts": [
@@ -25,20 +25,20 @@
         "*://*.indeed.com/viewjob*",
         "*://weworkremotely.com/remote-jobs/*"
       ],
-      "js": ["content.ts"]
+      "js": ["content.js"]
     }
   ],
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
     }
   },
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   }
 }
