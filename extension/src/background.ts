@@ -29,6 +29,7 @@ chrome.runtime.onMessage.addListener(
                 });
                 return;
               }
+              console.log("Scan response:", response);
               sendResponse(response);
             },
           );

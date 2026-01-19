@@ -13,6 +13,7 @@ type ScanResponse = {
 
 export default function App() {
   const [status, setStatus] = useState<string>("Ready");
+  const [response, setResponse] = useState<string>("");
 
   const handleScanPage = () => {
     setStatus("Scanning current page...");
@@ -30,7 +31,8 @@ export default function App() {
         if (response?.success) {
           setStatus("Yoinked! " + (response.jobTitle || "Job saved"));
         } else {
-          setStatus("Failed: " + (response?.error || "No job detected"));
+          setStatus("Failed: " + response);
+          setResponse(JSON.stringify(response, null, 2));
         }
       },
     );
@@ -42,6 +44,10 @@ export default function App() {
         <CardHeader>
           <CardTitle className="text-2xl text-center">Yoinker</CardTitle>
         </CardHeader>
+        <pre>
+          {`Version: 0.0.1`}
+          {response}
+        </pre>
         <CardContent className="space-y-6">
           <p className="text-center text-muted-foreground">{status}</p>
 
