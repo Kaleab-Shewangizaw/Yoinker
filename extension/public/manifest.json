@@ -22,7 +22,6 @@
       "matches": [
         "*://*.linkedin.com/jobs/*",
         "*://*.ethiojobs.net/*",
-        "*://*/*",
         "*://*.geezjobs.com/*",
         "*://*.indeed.com/viewjob*",
         "*://weworkremotely.com/remote-jobs/*"
